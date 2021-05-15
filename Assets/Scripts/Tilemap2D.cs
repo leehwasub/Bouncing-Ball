@@ -57,6 +57,9 @@ public class Tilemap2D : MonoBehaviour
         GameObject clone = Instantiate(tilePrefab, position, Quaternion.identity);
         clone.name = "Tile"; // Tile 오브젝트의 이름을 "Tile"로 설정
         clone.transform.SetParent(transform); // Tilemap2D 오브젝트를 Tile 오브젝트의 부모로 설정
+
+        Tile tile = clone.GetComponent<Tile>(); // 방금 생성한 타일(clone) 오브젝트의 Tile.Setup() 메소드 호출
+        tile.Setup(tileType);
     }
 
 
